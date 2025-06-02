@@ -1,4 +1,5 @@
 //CF link https://codeforces.com/contest/590/problem/C
+/*we wish to find a cell where cost is paid for all three of 'em to meet esentially cost of constructing a road is taken care of by BFS*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -103,9 +104,9 @@ void solve()
         {
             if (grid[i][j] != '#')
             {
+                //cout<<dist[1][i][j]<<" ";
                 if (dist[1][i][j] == INF || dist[2][i][j] == INF || dist[3][i][j] == INF)
                     continue;
-
 
                 long long path_cost = dist[1][i][j] + dist[2][i][j] + dist[3][i][j];
                 if (grid[i][j] == '.')
@@ -113,6 +114,7 @@ void solve()
                 ans = min(ans, path_cost);
             }
         }
+        //cout<<endl;
     }
 
 
